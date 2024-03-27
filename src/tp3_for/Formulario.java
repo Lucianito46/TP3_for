@@ -5,6 +5,8 @@
  */
 package tp3_for;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luciano Muzzachiodi
@@ -27,6 +29,7 @@ public class Formulario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTCorreo = new javax.swing.JTextField();
@@ -34,16 +37,29 @@ public class Formulario extends javax.swing.JFrame {
         jPContraseña = new javax.swing.JPasswordField();
         jBRegistrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
-        jLabel1.setBackground(new java.awt.Color(0, 51, 255));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Formulario");
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Formulario de login");
 
         jLabel2.setText("E-mail");
 
         jLabel3.setText("Password");
 
+        jBRegistrar.setForeground(new java.awt.Color(0, 153, 153));
         jBRegistrar.setText("Registrar");
         jBRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +112,15 @@ public class Formulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarActionPerformed
-        // TODO add your handling code here:
+        
+        String correo = jTCorreo.getText();
+        String contraseña = jPContraseña.getText();
+        
+        if (correo.equals("alumno@ulp.edu.ar") && contraseña.equals("12345678")) {
+                JOptionPane.showMessageDialog(this, "¡Bienvenido!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
+            }
     }//GEN-LAST:event_jBRegistrarActionPerformed
 
     /**
@@ -136,6 +160,7 @@ public class Formulario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBRegistrar;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
